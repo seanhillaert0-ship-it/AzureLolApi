@@ -1,0 +1,41 @@
+.home-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  .home-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // L'image remplit tout l'écran sans se déformer
+    z-index: 1;        // L'image reste en fond
+  }
+
+  .home-hero {
+    position: relative;
+    z-index: 2;        // Le texte s'affiche par-dessus l'image
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #f0e6d2;
+    text-align: center;
+    background: rgba(1, 10, 19, 0.3); // Léger voile sombre pour contraster le texte
+
+    h1 {
+      font-size: 3.5rem;
+      color: #c8aa6e; // Doré Hextech
+      margin-bottom: 1rem;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    p {
+      font-size: 1.3rem;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    }
+  }
+}

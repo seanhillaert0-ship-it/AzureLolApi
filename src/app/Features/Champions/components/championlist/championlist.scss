@@ -1,0 +1,121 @@
+:host {
+  display: block;
+  padding-top: 90px; // Laisse de l'espace sous la navbar fixe
+  min-height: 100vh;
+  background-color: #04080f; // Fond sombre général (pas de blanc)
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+
+// Le conteneur en mode Flexbox ou Grille pour aligner de gauche à droite
+.champion-list, .champions-container {
+  display: flex;
+  flex-wrap: wrap; // Permet aux cartes de se mettre à la suite et de passer à la ligne automatiquement
+  gap: 25px;       // Espace régulier entre chaque carte
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: flex-start; // Aligne les cartes bien à gauche
+}
+
+// Style strict de chaque carte (identique au modèle de base)
+.champion-card {
+  width: 320px;
+  background-color: #091428; // Bleu sombre style LoL
+  border: 2px solid #c8aa6e;  // Bordure dorée Hextech
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  color: #f0e6d2;
+  font-family: Arial, sans-serif;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(200, 170, 110, 0.2);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background-color: #010a13;
+    font-size: 0.8rem;
+    color: #a09b8c;
+
+    .champion-role {
+      font-weight: bold;
+      color: #c8aa6e;
+      text-transform: uppercase;
+    }
+  }
+
+  // Force toutes les images à avoir exactement la même taille (hauteur fixe + object-fit)
+  .image-container {
+    width: 100%;
+    height: 180px;
+    background-color: #1e282d;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // Empêche les images d'être déformées ou d'avoir des tailles différentes
+    }
+  }
+
+  .card-body {
+    padding: 15px;
+
+    h2, h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.4rem;
+      color: #f0e6d2;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-style: italic;
+      color: #a09b8c;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .story {
+      font-size: 0.85rem;
+      color: #c4c4c4;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; // Limite le texte à 3 lignes pour garder une carte propre
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  .hextech-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 18px;
+    background-color: #091428;
+    border: 2px solid #c8aa6e;
+    border-radius: 4px;
+    color: #f0e6d2;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: #a09b8c;
+    }
+
+    &:focus {
+      border-color: #f0e6d2;
+      box-shadow: 0 0 10px rgba(200, 170, 110, 0.4);
+    }
+  }
+}

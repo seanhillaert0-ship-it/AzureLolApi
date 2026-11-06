@@ -1,0 +1,52 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #010a13; // Fond sombre LoL
+  border-bottom: 2px solid #c8aa6e; // Bordure dorée Hextech
+  padding: 0 2rem;
+  height: 65px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
+  .navbar-brand {
+    .logo-text {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #c8aa6e;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+
+    li {
+      a {
+        text-decoration: none;
+        color: #f0e6d2;
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 5px 0;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: #c8aa6e;
+        }
+
+        // Classe appliquée automatiquement par Angular quand on est sur la page
+        &.active {
+          color: #c8aa6e;
+          border-bottom: 2px solid #c8aa6e;
+        }
+      }
+    }
+  }
+}

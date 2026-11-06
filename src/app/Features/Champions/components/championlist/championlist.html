@@ -1,0 +1,34 @@
+<!-- Barre de recherche placée au-dessus de la grille -->
+<div class="search-container">
+  <input 
+    type="text" 
+    placeholder="Rechercher un champion..." 
+    [ngModel]="searchTerm()" 
+    (ngModelChange)="searchTerm.set($event)"
+    class="hextech-input"
+  />
+</div>
+
+<!-- Grille des champions filtrée -->
+<div class="champion-list">
+  @for (champion of filteredChampions(); track champion.id) {
+    <div class="champion-card">
+      <div class="card-header">
+        <span class="champion-id">{{ champion.id }}</span>
+        <span class="champion-role">{{ champion.role }}</span>
+      </div>
+
+      <div class="image-container">
+        <img [src]="champion.imageurl" [alt]="champion.name">
+      </div>
+
+      <div class="card-body">
+        <h2>{{ champion.name }}</h2>
+        <p class="subtitle">{{ champion.title }}</p>
+        <p class="story">{{ champion.story }}</p>
+      </div>
+    </div>
+  } @empty {
+    <p class="no-results">Aucun champion ne correspond à votre recherche.</p>
+  }
+</div>
